@@ -21,10 +21,10 @@ public class Audio {
         this.url = url;
     }
 
-    public void play(File file){
+    public void play(){
         try{
             Clip clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(file));
+            clip.open(AudioSystem.getAudioInputStream(this.url));
             clip.start();
             Thread.sleep(clip.getMicrosecondLength()/1000);
         }catch(Exception e){
